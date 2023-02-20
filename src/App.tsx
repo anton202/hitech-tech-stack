@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DropDownList from './components/DropDownList';
+import Card from './components/Card';
+import CardWithHeader from './components/CardWithHeader';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <DropDownList data={['anton','sahked','tal']}></DropDownList>
+    <Card>
+      <div>
+        <p>HEllo</p>
+      </div>
+    </Card>
+    <CardWithHeader title='Jobs Graph'>
+      <div>
+        TEST
+      </div>
+    </CardWithHeader>
     </div>
   );
+ 
 }
 
 export default App;
