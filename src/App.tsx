@@ -1,7 +1,8 @@
 import './App.css';
 import DropDownList from './components/DropDownList';
-import Card from './components/Card';
-import CardWithHeader from './components/CardWithHeader';
+import Card from './components/Cards/Card';
+import CardWithHeader from './components/Cards/CardWithHeader';
+import ChartCard from './components/Cards/ChartCard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         TEST
       </div>
     </CardWithHeader>
+    <ChartCard title="Chart card" chartType='bar'></ChartCard>
     </div>
   );
  

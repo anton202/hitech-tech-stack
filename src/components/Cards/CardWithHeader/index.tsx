@@ -5,7 +5,7 @@ import Card from "../Card";
 // you can pass a component that will be displayed in the header.
 // for example, you can pass a DropDownList component
 
-export default function CardWithHeader(props:{title: string | React.ReactNode, children: React.ReactNode}){
+export default function CardWithHeader(props:{title: string | React.ReactNode, children: any}){
     const heading = typeof props.title === 'string' ? <h3>{props.title}</h3> : props.title;
         
     return (
