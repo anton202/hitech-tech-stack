@@ -1,7 +1,18 @@
 import CardWithHeader from "../CardWithHeader";
 import {VictoryBar, VictoryChart, VictoryLine} from 'victory';
 
+// i use Victory library for charts
+
 type chartType = 'bar' | 'chart' | 'line';
+
+
+interface Props{
+    title:string,
+    chartType:chartType,
+    xAxisName:string | number,
+    yAxisName:string | number
+    data: {}[]
+  }
 
 const components = {
     bar:VictoryBar,
@@ -9,18 +20,12 @@ const components = {
     line:VictoryLine
 }
 
-const data = [
-    {quarter: 1, earnings: 13000},
-    {quarter: 2, earnings: 16500},
-    {quarter: 3, earnings: 14250},
-    {quarter: 4, earnings: 19000}
-  ];
+export default function ChartCard(props:Props){
+    const Chart = components[props.chartType] as React.ElementType;
 
-export default function ChartCard(props:{title:string, chartType:chartType}){
-    const Chart = components[props.chartType] as React.ElementType
     return (
         <CardWithHeader title={props.title}>
-        <Chart data={data}  x="quarter" y="earnings"/>
+        <Chart data={props.data} x={props.xAxisName} y={props.yAxisName}/>
        
         </CardWithHeader>
     )
